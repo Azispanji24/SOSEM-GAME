@@ -231,6 +231,7 @@ body {
 
   .result {
     font-size: clamp(14px, 2vw, 18px);
+    top: 400px;
   }
 
   #reset-btn {
