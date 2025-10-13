@@ -37,7 +37,7 @@ body {
   font-size: clamp(2rem, 5vw, 3rem);
   color: #333;
   margin-bottom: 1.5rem;
-  font-family: "Comic Relief", system-ui;
+  /* font-family: "Comic Relief", system-ui; */
   font-weight: 700;
   font-style: normal;
 }
@@ -236,21 +236,16 @@ body {
 
   .result {
     font-size: clamp(14px, 2vw, 18px);
-    top: 400px;
-    text-align: center;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
+    top: 430px;
   }
 
   #reset-btn {
-    text-align: center;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
     font-size: clamp(14px, 2vw, 20px);
     width: min(120px, 16vw);
+    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   }
 }
