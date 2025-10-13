@@ -237,9 +237,19 @@ body {
   .result {
     font-size: clamp(14px, 2vw, 18px);
     top: 400px;
+    text-align: center;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
   }
 
   #reset-btn {
+    text-align: center;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
     font-size: clamp(14px, 2vw, 20px);
     width: min(120px, 16vw);
   }
