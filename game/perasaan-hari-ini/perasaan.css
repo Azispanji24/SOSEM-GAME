@@ -13,10 +13,7 @@ html {
 /* Mencegah zoom otomatis di beberapa browser mobile */
 body {
   -webkit-text-size-adjust: 100%;
-}
-body {
   margin: 0;
-  
   font-family: 'Comic Sans MS', sans-serif;
   background: rgb(250, 250, 213);
   min-height: 100vh;
@@ -26,25 +23,24 @@ body {
 }
 
 .container {
-    position: relative;
- align-items: center;
+  position: relative;
+  align-items: center;
   justify-content: center;
-   margin: 0 auto;
+  margin: 0 auto;
   text-align: center;
   bottom: 100px;
 }
 
-
 .title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   color: #333;
   margin-bottom: 1.5rem;
 }
 
 .circle-container {
   position: relative;
-   width: 80vmin;
-  height: 80vmin;
+  width: min(80vmin, 90vw);
+  height: min(80vmin, 90vw);
   margin: 0 auto;
   border-radius: 80px;
   display: flex;
@@ -52,22 +48,21 @@ body {
   align-items: center;
   background: #ffffff59;
   border: 9px solid #d3d3d3b0;
-
 }
 
 .center-emoji {
-  width: 40vmin;
-  height: 40vmin;
-  font-size: 25vmin;
+  width: min(40vmin, 50vw);
+  height: min(40vmin, 50vw);
+  font-size: min(25vmin, 30vw);
   background: #fff3cd;
   border: 9px solid #f4a261;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 350px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 .emotion-btn {
   position: absolute;
   display: block;
@@ -76,27 +71,27 @@ body {
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  width: 10rem;
-  height: 10rem;
+  width: min(10rem, 15vw);
+  height: min(10rem, 15vw);
   transform: translate(50%, -50%);
   animation: bounce 1.5s ease-in-out infinite alternate;
   transition: transform 0.2s ease-in-out;
 }
 
 .emotion-btn:hover {
-  transform: translate(-50%, -50%) scale(1.3);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .emotion-btn span {
   display: block;
-  font-size: 200px;
+  font-size: min(200px, 20vw);
 }
 
 .emotion-btn small {
   display: block;
   color: #333;
   font-weight: 800;
-  font-size: 35px;
+  font-size: clamp(20px, 3vw, 35px);
 }
 
 @keyframes bounce {
@@ -105,31 +100,26 @@ body {
   100% { transform: translateY(0); }
 }
 
-
-
 .result {
-  height: 200px;
   position: absolute;
-  top: 1600px; /* Menempatkan elemen di tengah secara vertikal */
-  left: 50%; /* Menempatkan elemen di tengah secara horizontal */
-  transform: translate(-50%, -50%); /* Memastikan elemen benar-benar berada di tengah */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
-  margin: 0 auto;
-  font-size: 30px;
+  font-size: clamp(20px, 4vw, 30px);
 }
-
 
 .hidden {
   display: none;
 }
 
 #reset-btn {
-  width: 150px;
+  width: min(150px, 20vw);
   height: auto;
   margin-top: 1rem;
   padding: 10px 20px;
@@ -139,127 +129,112 @@ body {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
-  font-size: 40px;
+  font-size: clamp(20px, 4vw, 40px);
 }
 
 #reset-btn:hover {
   background-color: #d43d63;
 }
 
-/* res */
-
-
 /* Responsif untuk layar tablet dan lebih kecil */
 @media (max-width: 1024px) {
   .circle-container {
-    width: 50rem;
-    height: 50rem;
+    width: min(60vmin, 80vw);
+    height: min(60vmin, 80vw);
   }
 
   .center-emoji {
-    width: 25rem;
-    height: 25rem;
-    font-size: 15rem; /* Mengurangi ukuran emoji */
+    width: min(30vmin, 40vw);
+    height: min(30vmin, 40vw);
+    font-size: min(18vmin, 25vw);
   }
 
   .emotion-btn {
-    width: 8rem;
-    height: 8rem;
+    width: min(8rem, 12vw);
+    height: min(8rem, 12vw);
   }
 
   .emotion-btn span {
-    font-size: 120px; /* Menyesuaikan ukuran emoji */
-  }
-
-  .emotion-btn small {
-    /* font-size: 1.5rem; Menyesuaikan ukuran teks */
+    font-size: min(120px, 15vw);
   }
 
   .result {
-    top: 60rem; /* Menyesuaikan posisi result */
-    font-size: 25px; /* Menyesuaikan ukuran font */
+    font-size: clamp(18px, 3vw, 25px);
   }
 
   #reset-btn {
-    font-size: 30px; /* Menyesuaikan ukuran font tombol reset */
+    font-size: clamp(18px, 3vw, 30px);
   }
 }
 
 /* Responsif untuk layar handphone (lebih kecil dari 768px) */
 @media (max-width: 768px) {
   .circle-container {
-    width: 40rem;
-    height: 40rem;
+    width: min(70vmin, 85vw);
+    height: min(70vmin, 85vw);
   }
-  
 
   .center-emoji {
-    width: 20rem;
-    height: 20rem;
-    font-size: 12rem; /* Ukuran emoji lebih kecil di HP */
+    width: min(35vmin, 45vw);
+    height: min(35vmin, 45vw);
+    font-size: min(20vmin, 28vw);
   }
 
   .emotion-btn {
-    /* display: flex; */
-    width: 7rem;
-    height: 7rem;
+    width: min(7rem, 10vw);
+    height: min(7rem, 10vw);
   }
 
   .emotion-btn span {
-    display: flex;
-    font-size: 100px; /* Mengurangi ukuran emoji */
-    /* margin-right: 20px; */
-
+    font-size: min(100px, 12vw);
   }
 
   .emotion-btn small {
-    font-size: 1rem; /* Mengurangi ukuran teks */
+    font-size: clamp(16px, 2vw, 1rem);
   }
 
   .result {
-    top: 55rem; /* Menyesuaikan posisi result */
-    font-size: 20px; /* Menyesuaikan ukuran font */
+    font-size: clamp(16px, 2vw, 20px);
   }
 
   #reset-btn {
-    font-size: 25px; /* Ukuran tombol reset */
-    width: 130px; /* Menyesuaikan lebar tombol reset */
+    font-size: clamp(16px, 2vw, 25px);
+    width: min(130px, 18vw);
   }
 }
 
 /* Responsif untuk layar lebih kecil (handphone sangat kecil) */
 @media (max-width: 480px) {
   .circle-container {
-    width: 30rem;
-    height: 30rem;
+    width: min(80vmin, 90vw);
+    height: min(80vmin, 90vw);
   }
 
   .center-emoji {
-    width: 15rem;
-    height: 15rem;
-    font-size: 10rem; /* Ukuran emoji lebih kecil di handphone sangat kecil */
+    width: min(40vmin, 50vw);
+    height: min(40vmin, 50vw);
+    font-size: min(25vmin, 30vw);
   }
 
   .emotion-btn {
-    width: 9rem;
-    height: 9rem;
+    width: min(6rem, 8vw);
+    height: min(6rem, 8vw);
   }
 
   .emotion-btn span {
-    font-size: 70px; /* Mengurangi ukuran emoji */
+    font-size: min(70px, 10vw);
   }
 
   .emotion-btn small {
-    font-size: 0.8rem; /* Menyesuaikan ukuran teks */
+    font-size: clamp(12px, 1.5vw, 0.8rem);
   }
 
   .result {
-    top: 45rem; /* Menyesuaikan posisi result */
-    font-size: 18px; /* Ukuran font lebih kecil */
+    font-size: clamp(14px, 2vw, 18px);
   }
 
   #reset-btn {
-    font-size: 20px; /* Menyesuaikan ukuran font tombol reset */
-    width: 120px; /* Menyesuaikan lebar tombol reset */
+    font-size: clamp(14px, 2vw, 20px);
+    width: min(120px, 16vw);
   }
 }
