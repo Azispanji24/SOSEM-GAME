@@ -222,7 +222,7 @@ body {
   }
 
   .emotion-btn span {
-    font-size: min(70px, 10vw);
+    font-size: min(200px, 10vw);
   }
 
   .emotion-btn small {
