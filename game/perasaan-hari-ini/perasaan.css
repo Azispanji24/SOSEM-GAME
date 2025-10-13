@@ -29,9 +29,9 @@ body {
     position: relative;
  align-items: center;
   justify-content: center;
-  margin-top: 2rem;
    margin: 0 auto;
   text-align: center;
+  bottom: 100px;
 }
 
 
@@ -43,8 +43,8 @@ body {
 
 .circle-container {
   position: relative;
-  width: 60rem;
-  height: 60rem;
+   width: 80vmin;
+  height: 80vmin;
   margin: 0 auto;
   border-radius: 80px;
   display: flex;
@@ -56,17 +56,17 @@ body {
 }
 
 .center-emoji {
-  width: 30rem;
-  height: 30rem;
+  width: 40vmin;
+  height: 40vmin;
+  font-size: 25vmin;
   background: #fff3cd;
   border: 9px solid #f4a261;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
+  font-size: 350px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  font-size: 20rem;
 }
 .emotion-btn {
   position: absolute;
@@ -89,14 +89,14 @@ body {
 
 .emotion-btn span {
   display: block;
-  font-size: 7rem;
+  font-size: 200px;
 }
 
 .emotion-btn small {
   display: block;
   color: #333;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 35px;
 }
 
 @keyframes bounce {
@@ -110,7 +110,7 @@ body {
 .result {
   height: 200px;
   position: absolute;
-  top: 73rem; /* Menempatkan elemen di tengah secara vertikal */
+  top: 1600px; /* Menempatkan elemen di tengah secara vertikal */
   left: 50%; /* Menempatkan elemen di tengah secara horizontal */
   transform: translate(-50%, -50%); /* Memastikan elemen benar-benar berada di tengah */
   text-align: center;
@@ -168,11 +168,11 @@ body {
   }
 
   .emotion-btn span {
-    font-size: 5rem; /* Menyesuaikan ukuran emoji */
+    font-size: 120px; /* Menyesuaikan ukuran emoji */
   }
 
   .emotion-btn small {
-    font-size: 1.5rem; /* Menyesuaikan ukuran teks */
+    /* font-size: 1.5rem; Menyesuaikan ukuran teks */
   }
 
   .result {
@@ -191,6 +191,7 @@ body {
     width: 40rem;
     height: 40rem;
   }
+  
 
   .center-emoji {
     width: 20rem;
@@ -199,14 +200,15 @@ body {
   }
 
   .emotion-btn {
+    /* display: flex; */
     width: 7rem;
     height: 7rem;
   }
 
   .emotion-btn span {
     display: flex;
-    font-size: 6rem; /* Mengurangi ukuran emoji */
-    margin-right: 20px;
+    font-size: 100px; /* Mengurangi ukuran emoji */
+    /* margin-right: 20px; */
 
   }
 
@@ -244,7 +246,7 @@ body {
   }
 
   .emotion-btn span {
-    font-size: 3rem; /* Mengurangi ukuran emoji */
+    font-size: 70px; /* Mengurangi ukuran emoji */
   }
 
   .emotion-btn small {

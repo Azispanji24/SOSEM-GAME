@@ -22,7 +22,7 @@ function placeEmotions() {
   let radius;
 
   // Atur jarak berdasarkan lebar layar (gunakan multiplier untuk kontrol)
-  const distanceMultiplier = screenWidth < 640 ? 0.7 : screenWidth < 768 ? 0.7 : 1; // Control multiplier
+  const distanceMultiplier = screenWidth < 480 ? 0.47 : screenWidth < 768 ? 0.6 : screenWidth < 1024 ? 0.8 : 1.4; // Control multiplier
 
   radius = 390 * distanceMultiplier; // Sesuaikan radius berdasarkan multiplier
 
@@ -33,13 +33,15 @@ function placeEmotions() {
 
     const btn = document.createElement('div');
     btn.className = 'emotion-btn';
-    btn.style.top = `calc(38% + ${y}px)`;
-    btn.style.left = `calc(41% + ${x}px)`;
+    btn.style.top = `calc(40% + ${y}px)`;
+    btn.style.left = `calc(40% + ${x}px)`;
     btn.innerHTML = `
       <span>${emotion.emoji}</span>
-      <small>${emotion.name}</small>
+      
     `;
-
+    {
+      /* <small>${emotion.name}</small> */
+    }
     btn.addEventListener('click', () => selectEmotion(emotion));
     circleContainer.appendChild(btn);
   });
