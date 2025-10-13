@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bagaimana Perasaanmu Hari Ini?</title>
+    <link rel="stylesheet" href="perasaan.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/13.0.1/twemoji.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title animate__animated animate__fadeIn">
+            How do you feel today?
+        </h1>
+
+        <div class="circle-container">
+            <div id="center-emoji" class="center-emoji animate__animated animate__zoomIn">
+                🙂
+            </div>
+            <!-- Emotions akan dimasukkan lewat JS -->
+        </div>
+
+        <div id="result" class="result hidden">
+            <h2>You feel <span id="emotion-name"></span>!</h2>
+            <button id="reset-btn">Clear</button>
+        </div>
+    </div>
+
+    <script src="perasaan.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+body {
+  font-family: 'Comic Sans MS', sans-serif;
+  background: rgb(249, 249, 249);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px; /* Tambahkan padding di kiri dan kanan agar tidak terlalu dekat dengan tepi layar */
+}
+
+h1 {
+  color: #674b03;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 30px;
+  color: #5f4505;
+}
+
+.menu-container {
+  font-size: large;
+  width: 100%; /* Gunakan 100% agar menu kontainer tidak melampaui layar */
+  max-width: 900px; /* Batas maksimal lebar kontainer */
+  height: auto;
+  text-align: center;
+  background: rgb(250, 250, 213);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+  border: #694d05 9px solid;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.727);
+}
+
+/* Menu Button Styling */
+.game-menu a {
+  width: 80%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  padding: 12px 25px;
+  font-size: 40px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ffcf54;
+  color: #5f4505;
+}
+
+/* Hover Effect for Buttons */
+.game-menu a:hover {
+  background-color: #ffb703;
+  border: #694d05 6px solid;
+}
+
+.game-menu a:hover span {
+  transform: scale(1.3);
+  transition: transform 0.2s;
+}
+
+.center-emoji, .emotion-btn span {
+  font-family: 'Twemoji', sans-serif !important;
+}
+
+
+/* Responsive Design: Tablet and Mobile */
+
+/* Tablet */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 50px; /* Lebih kecil untuk layar tablet */
+  }
+
+  .game-menu a {
+    font-size: 30px; /* Ukuran font button lebih kecil */
+    width: 90%; /* Lebar tombol lebih besar */
+    height: 80px; /* Tinggi tombol lebih kecil */
+  }
+
+  .menu-container {
+    padding: 20px; /* Mengurangi padding agar lebih kompak */
+    max-width: 500px; /* Lebar kontainer di perangkat mobile */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 40px; /* Lebih kecil untuk layar handphone */
+  }
+
+  .game-menu a {
+    font-size: 24px; /* Ukuran font button lebih kecil */
+    padding: 10px 20px; /* Mengurangi padding di tombol */
+    width: 100%; /* Tombol memenuhi lebar layar */
+    height: 70px; /* Lebar dan tinggi tombol lebih kecil */
+  }
+
+  .menu-container {
+    padding: 15px; /* Mengurangi padding */
+    width: 70%; /* Lebar kontainer penuh */
+    max-width: 600px; /* Lebar kontainer di perangkat mobile */
+  }
+}
+

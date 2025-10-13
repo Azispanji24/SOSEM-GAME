@@ -1,0 +1,1 @@
+- [x] Edit perasaan.css to consolidate .emotion-btn styles: remove duplicates, invalid top:200rem, top:20rem on span; add flexbox for centering content.
