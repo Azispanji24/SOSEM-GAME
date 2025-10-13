@@ -1,3 +1,19 @@
+/* ===== RESET UNTUK REM SCALE ===== */
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mencegah zoom otomatis di beberapa browser mobile */
+body {
+  -webkit-text-size-adjust: 100%;
+}
 body {
   font-family: 'Comic Sans MS', sans-serif;
   background: rgb(249, 249, 249);
