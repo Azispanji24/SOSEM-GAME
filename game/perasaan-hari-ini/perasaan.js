@@ -118,23 +118,32 @@ const circleContainer = document.querySelector('.circle-container');
 const basePath = '../../assets/';
 const imagePath = basePath + 'images/';
 const soundPath = basePath + 'sounds/';
+const suaraPath = basePath + 'sounds/';
 
 // Daftar emosi (gunakan file PNG)
 const emotions = [
-  { name: 'happy', image: imagePath + 'smiling-face.png', sound: soundPath + 'mixkit-game-level-completed-2059.wav' },
+  // { name: 'bahagia', image: imagePath + 'smiling-face.png', sound: soundPath + 'mixkit-game-level-completed-2059.wav' },
   {
-    name: 'excited',
-    image: imagePath + 'grinning-squinting.png',
-    sound: soundPath + 'mixkit-game-level-completed-2059.wav',
+    name: 'gembira',
+    image: imagePath + 'exited.png',
+    sounds: [soundPath + 'mixkit-game-level-completed-2059.wav', suaraPath + 'bahagiaFix.mp3'],
   },
-  { name: 'sad', image: imagePath + 'crying-face.png', sound: soundPath + 'negative_beeps-6008.mp3' },
-  { name: 'angry', image: imagePath + 'angry-face.png', sound: soundPath + 'grunting-228447.mp3' },
   {
-    name: 'surprised',
-    image: imagePath + 'open-mouth.png',
-    sound: soundPath + 'mixkit-female-surprised-gasp-968.wav',
+    name: 'murung',
+    image: imagePath + 'sad.png',
+    sounds: [soundPath + 'negative_beeps-6008.mp3', suaraPath + 'murung.mp3'],
   },
-  { name: 'tired', image: imagePath + 'sleeping-face.png', sound: soundPath + 'male-snoring-297875_oSbUdiph.mp3' },
+  {
+    name: 'sedih',
+    image: imagePath + 'sedih.png',
+    sounds: [soundPath + 'negative_beeps-6008.mp3', suaraPath + 'sedihFix.mp3'],
+  },
+  {
+    name: 'kaget',
+    image: imagePath + 'kaget.png',
+    sounds: [soundPath + 'mixkit-female-surprised-gasp-968.wav', suaraPath + 'kaget.mp3'],
+  },
+  // { name: 'lelah', image: imagePath + 'sleeping-face.png', sound: soundPath + 'male-snoring-297875_oSbUdiph.mp3' },
 ];
 
 // Fungsi atur posisi melingkar
@@ -148,8 +157,8 @@ function placeEmotions() {
 
   emotions.forEach((emotion, index) => {
     const angle = (360 / emotions.length) * index;
-    const x = radius * Math.cos((angle * Math.PI) / 180);
-    const y = radius * Math.sin((angle * Math.PI) / 180);
+    const x = radius * Math.cos((angle * Math.PI) / -180);
+    const y = radius * Math.sin((angle * Math.PI) / -180);
 
     const btn = document.createElement('div');
     btn.className = 'emotion-btn';
@@ -170,13 +179,22 @@ function selectEmotion(emotion) {
   emotionName.textContent = emotion.name;
   result.classList.remove('hidden');
 
-  const audio = new Audio(emotion.sound);
-  audio.play();
+  // const audio = new Audio(emotion.sound);
+  // audio.play();
+
+  if (emotion.sounds && Array.isArray(emotion.sounds)) {
+    emotion.sounds.forEach((s) => {
+      const audio = new Audio(s);
+      audio.play();
+    });
+  }
 }
 
 // Fungsi reset
 resetBtn.addEventListener('click', () => {
-  centerEmoji.innerHTML = `<img src="${imagePath}slightly-smiling.png" alt="neutral" class="center-img">`;
+  // centerEmoji.innerHTML = `<img src="${imagePath}slightly-smiling.png" alt="neutral" class="center-img">`;
+  centerEmoji.innerHTML = '';
+
   result.classList.add('hidden');
 });
 

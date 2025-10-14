@@ -18,6 +18,11 @@ body {
   font-weight: 700;
   font-style: normal;
   background: rgb(250, 250, 213);
+    background-image: url('../../assets/images/bg.jpg');
+    background-repeat: no-repeat;       /* Supaya gambarnya nggak diulang */
+    background-position: center center; /* Posisikan gambar di tengah */
+    background-size: cover;              /* Buat gambar memenuhi layar */
+    background-attachment: fixed;        /* Biar gambarnya tetap di tempat saat scroll */
   min-height: 100vh;
   display: flex;
   justify-content: center;
