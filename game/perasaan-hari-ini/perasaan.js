@@ -97,7 +97,7 @@ const emotions = [
     image: imagePath + 'open-mouth.png',
     sound: soundPath + 'mixkit-female-surprised-gasp-968.wav',
   },
-  { name: 'tired', image: imagePath + 'sleeping_face.png', sound: soundPath + 'male-snoring-297875_oSbUdiph.mp3' },
+  { name: 'tired', image: imagePath + 'sleeping-face.png', sound: soundPath + 'male-snoring-297875_oSbUdiph.mp3' },
 ];
 
 // Fungsi atur posisi melingkar
@@ -106,7 +106,7 @@ function placeEmotions() {
   let radius;
 
   // Sesuaikan jarak lingkaran agar tetap responsif
-  const distanceMultiplier = screenWidth < 480 ? 0.55 : screenWidth < 768 ? 0.5 : screenWidth < 1024 ? 0.55 : 0.6;
+  const distanceMultiplier = screenWidth < 480 ? 0.45 : screenWidth < 768 ? 0.5 : screenWidth < 1024 ? 0.9 : 1.9;
   radius = Math.min(250, screenWidth * 0.9) * distanceMultiplier;
 
   emotions.forEach((emotion, index) => {
@@ -116,8 +116,8 @@ function placeEmotions() {
 
     const btn = document.createElement('div');
     btn.className = 'emotion-btn';
-    btn.style.top = `calc(50% + ${y}px)`;
-    btn.style.left = `calc(50% + ${x}px)`;
+    btn.style.top = `calc(40% + ${y}px)`;
+    btn.style.left = `calc(40% + ${x}px)`;
     btn.innerHTML = `
       <img src="${emotion.image}" alt="${emotion.name}" class="emotion-img">
     `;
@@ -139,7 +139,7 @@ function selectEmotion(emotion) {
 
 // Fungsi reset
 resetBtn.addEventListener('click', () => {
-  centerEmoji.innerHTML = `<img src="${imagePath}neutral_face.png" alt="neutral" class="center-img">`;
+  centerEmoji.innerHTML = `<img src="${imagePath}slightly-smiling.png" alt="neutral" class="center-img">`;
   result.classList.add('hidden');
 });
 

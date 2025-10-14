@@ -215,14 +215,16 @@ body {
     height: min(80vmin, 90vw);
   }
 
+
+  /* lingkaran tengah */
   .center-emoji {
-    width: min(40vmin, 50vw);
-    height: min(40vmin, 50vw);
+    width: min(40vmin, 40vw);
+    height: min(40vmin, 40vw);
     font-size: min(25vmin, 30vw);
   }
 
   .emotion-btn {
-    width: min(6rem, 8vw);
+    width: min(10rem, 10vw);
     height: min(6rem, 8vw);
   }
 
@@ -233,6 +235,18 @@ body {
   .emotion-btn small {
     font-size: clamp(12px, 1.5vw, 0.8rem);
   }
+
+  .emotion-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.center-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
 
   .result {
     font-size: clamp(14px, 2vw, 18px);
