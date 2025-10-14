@@ -107,7 +107,7 @@ body {
 
 .result {
   position: absolute;
-  top: 50%;
+  top: 105%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -115,8 +115,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-size: clamp(20px, 4vw, 30px);
+  /* top: 95rem; */
+  
 }
 
  .emotion-img {
@@ -189,6 +191,8 @@ body {
 
   .result {
     font-size: clamp(18px, 3vw, 25px);
+    margin-top: 200px;
+
   }
 
   #reset-btn {
@@ -238,6 +242,7 @@ body {
 
   .result {
     font-size: clamp(16px, 2vw, 20px);
+    margin-top: 85px;
   }
 
   #reset-btn {
