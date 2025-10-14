@@ -10,6 +10,14 @@ html {
   padding: 0;
 }
 
+@font-face {
+  font-family: 'ComicReliefLocal';
+  src: url('assets/font/Comic_Relief/ComicRelief-Regular.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* Mencegah zoom otomatis di beberapa browser mobile */
 body {
   -webkit-text-size-adjust: 100%;
@@ -29,6 +37,7 @@ body {
   justify-content: center;
   padding: 0 10px; /* Tambahkan padding di kiri dan kanan agar tidak terlalu dekat dengan tepi layar */
 }
+
 
 h1 {
   color: #674b03;
@@ -185,6 +194,6 @@ p {
 }
 
 body {
-font-family: 'Comic Relief', 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'ComicReliefLocal', 'Comic Sans MS', cursive, sans-serif;
 }
 
