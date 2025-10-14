@@ -1,3 +1,77 @@
+// const centerEmoji = document.getElementById('center-emoji');
+// const result = document.getElementById('result');
+// const emotionName = document.getElementById('emotion-name');
+// const resetBtn = document.getElementById('reset-btn');
+// const circleContainer = document.querySelector('.circle-container');
+
+// const basePath = '../../assets/';
+
+// // Daftar emosi
+// const emotions = [
+//   { name: 'happy', emoji: '😊', sound: basePath + 'sounds/mixkit-game-level-completed-2059.wav' },
+//   { name: 'excited', emoji: '😆', sound: basePath + 'sounds/mixkit-game-level-completed-2059.wav' },
+//   { name: 'sad', emoji: '😢', sound: basePath + 'sounds/negative_beeps-6008.mp3' },
+//   { name: 'angry', emoji: '😠', sound: basePath + 'sounds/grunting-228447.mp3' },
+//   { name: 'surprised', emoji: '😮', sound: basePath + 'sounds/mixkit-female-surprised-gasp-968.wav' },
+//   { name: 'tired', emoji: '😴', sound: basePath + 'sounds/male-snoring-297875_oSbUdiph.mp3' },
+// ];
+
+// // Fungsi atur posisi melingkar
+// function placeEmotions() {
+//   const screenWidth = window.innerWidth;
+//   let radius;
+
+//   // Atur jarak berdasarkan lebar layar (gunakan multiplier untuk kontrol, dikurangi untuk mencegah overflow)
+//   const distanceMultiplier = screenWidth < 480 ? 0.5 : screenWidth < 768 ? 0.45 : screenWidth < 1024 ? 0.5 : 2; // Reduced multipliers
+
+//   radius = Math.min(250, screenWidth * 0.9) * distanceMultiplier; // Base radius capped and proportional
+
+//   emotions.forEach((emotion, index) => {
+//     const angle = (360 / emotions.length) * index;
+//     const x = radius * Math.cos((angle * Math.PI) / 180);
+//     const y = radius * Math.sin((angle * Math.PI) / 180);
+
+//     const btn = document.createElement('div');
+//     btn.className = 'emotion-btn';
+//     btn.style.top = `calc(40% + ${y}px)`;
+//     btn.style.left = `calc(40% + ${x}px)`;
+//     btn.innerHTML = `
+//       <span>${emotion.emoji}</span>
+
+//     `;
+//     {
+//       /* <small>${emotion.name}</small> */
+//     }
+//     btn.addEventListener('click', () => selectEmotion(emotion));
+//     circleContainer.appendChild(btn);
+//   });
+// }
+
+// // Fungsi memilih emosi
+// function selectEmotion(emotion) {
+//   centerEmoji.textContent = emotion.emoji;
+//   emotionName.textContent = emotion.name;
+//   result.classList.remove('hidden');
+
+//   const audio = new Audio(emotion.sound);
+//   audio.play();
+// }
+
+// // Fungsi reset
+// resetBtn.addEventListener('click', () => {
+//   centerEmoji.textContent = '🙂';
+//   result.classList.add('hidden');
+// });
+
+// // Render awal
+// placeEmotions();
+
+// // Update posisi jika ukuran layar berubah
+// window.addEventListener('resize', () => {
+//   circleContainer.querySelectorAll('.emotion-btn').forEach((el) => el.remove());
+//   placeEmotions();
+// });
+
 const centerEmoji = document.getElementById('center-emoji');
 const result = document.getElementById('result');
 const emotionName = document.getElementById('emotion-name');
@@ -5,15 +79,25 @@ const resetBtn = document.getElementById('reset-btn');
 const circleContainer = document.querySelector('.circle-container');
 
 const basePath = '../../assets/';
+const imagePath = basePath + 'images/';
+const soundPath = basePath + 'sounds/';
 
-// Daftar emosi
+// Daftar emosi (gunakan file PNG)
 const emotions = [
-  { name: 'happy', emoji: '😊', sound: basePath + 'sounds/mixkit-game-level-completed-2059.wav' },
-  { name: 'excited', emoji: '😆', sound: basePath + 'sounds/mixkit-game-level-completed-2059.wav' },
-  { name: 'sad', emoji: '😢', sound: basePath + 'sounds/negative_beeps-6008.mp3' },
-  { name: 'angry', emoji: '😠', sound: basePath + 'sounds/grunting-228447.mp3' },
-  { name: 'surprised', emoji: '😮', sound: basePath + 'sounds/mixkit-female-surprised-gasp-968.wav' },
-  { name: 'tired', emoji: '😴', sound: basePath + 'sounds/male-snoring-297875_oSbUdiph.mp3' },
+  { name: 'happy', image: imagePath + 'smiling-face.png', sound: soundPath + 'mixkit-game-level-completed-2059.wav' },
+  {
+    name: 'excited',
+    image: imagePath + 'grinning-squinting.png',
+    sound: soundPath + 'mixkit-game-level-completed-2059.wav',
+  },
+  { name: 'sad', image: imagePath + 'crying-face.png', sound: soundPath + 'negative_beeps-6008.mp3' },
+  { name: 'angry', image: imagePath + 'angry-face.png', sound: soundPath + 'grunting-228447.mp3' },
+  {
+    name: 'surprised',
+    image: imagePath + 'open-mouth.png',
+    sound: soundPath + 'mixkit-female-surprised-gasp-968.wav',
+  },
+  { name: 'tired', image: imagePath + 'sleeping_face.png', sound: soundPath + 'male-snoring-297875_oSbUdiph.mp3' },
 ];
 
 // Fungsi atur posisi melingkar
@@ -21,10 +105,9 @@ function placeEmotions() {
   const screenWidth = window.innerWidth;
   let radius;
 
-  // Atur jarak berdasarkan lebar layar (gunakan multiplier untuk kontrol, dikurangi untuk mencegah overflow)
-  const distanceMultiplier = screenWidth < 480 ? 0.5 : screenWidth < 768 ? 0.45 : screenWidth < 1024 ? 0.5 : 2; // Reduced multipliers
-
-  radius = Math.min(250, screenWidth * 0.9) * distanceMultiplier; // Base radius capped and proportional
+  // Sesuaikan jarak lingkaran agar tetap responsif
+  const distanceMultiplier = screenWidth < 480 ? 0.55 : screenWidth < 768 ? 0.5 : screenWidth < 1024 ? 0.55 : 0.6;
+  radius = Math.min(250, screenWidth * 0.9) * distanceMultiplier;
 
   emotions.forEach((emotion, index) => {
     const angle = (360 / emotions.length) * index;
@@ -33,15 +116,12 @@ function placeEmotions() {
 
     const btn = document.createElement('div');
     btn.className = 'emotion-btn';
-    btn.style.top = `calc(40% + ${y}px)`;
-    btn.style.left = `calc(40% + ${x}px)`;
+    btn.style.top = `calc(50% + ${y}px)`;
+    btn.style.left = `calc(50% + ${x}px)`;
     btn.innerHTML = `
-      <span>${emotion.emoji}</span>
-
+      <img src="${emotion.image}" alt="${emotion.name}" class="emotion-img">
     `;
-    {
-      /* <small>${emotion.name}</small> */
-    }
+
     btn.addEventListener('click', () => selectEmotion(emotion));
     circleContainer.appendChild(btn);
   });
@@ -49,7 +129,7 @@ function placeEmotions() {
 
 // Fungsi memilih emosi
 function selectEmotion(emotion) {
-  centerEmoji.textContent = emotion.emoji;
+  centerEmoji.innerHTML = `<img src="${emotion.image}" alt="${emotion.name}" class="center-img">`;
   emotionName.textContent = emotion.name;
   result.classList.remove('hidden');
 
@@ -59,7 +139,7 @@ function selectEmotion(emotion) {
 
 // Fungsi reset
 resetBtn.addEventListener('click', () => {
-  centerEmoji.textContent = '🙂';
+  centerEmoji.innerHTML = `<img src="${imagePath}neutral_face.png" alt="neutral" class="center-img">`;
   result.classList.add('hidden');
 });
 
