@@ -119,6 +119,18 @@ body {
   font-size: clamp(20px, 4vw, 30px);
 }
 
+ .emotion-img {
+  width: 260px;
+  height: 260px;
+  object-fit: contain;
+}
+
+.center-img {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+}
+
 .hidden {
   display: none;
 }
@@ -163,6 +175,18 @@ body {
     font-size: min(120px, 15vw);
   }
 
+   .emotion-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.center-img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
   .result {
     font-size: clamp(18px, 3vw, 25px);
   }
@@ -179,6 +203,8 @@ body {
     height: min(70vmin, 85vw);
   }
 
+
+ /* lingkaran tengah */
   .center-emoji {
     width: min(35vmin, 45vw);
     height: min(35vmin, 45vw);
@@ -186,7 +212,7 @@ body {
   }
 
   .emotion-btn {
-    width: min(7rem, 10vw);
+    width: min(10rem, 10vw);
     height: min(7rem, 10vw);
   }
 
@@ -197,6 +223,18 @@ body {
   .emotion-btn small {
     font-size: clamp(16px, 2vw, 1rem);
   }
+
+   .emotion-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.center-img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+}
 
   .result {
     font-size: clamp(16px, 2vw, 20px);
@@ -243,8 +281,8 @@ body {
 }
 
 .center-img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
 }
 

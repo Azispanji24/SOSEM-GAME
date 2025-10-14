@@ -106,7 +106,7 @@ function placeEmotions() {
   let radius;
 
   // Sesuaikan jarak lingkaran agar tetap responsif
-  const distanceMultiplier = screenWidth < 480 ? 0.45 : screenWidth < 768 ? 0.5 : screenWidth < 1024 ? 0.9 : 1.9;
+  const distanceMultiplier = screenWidth < 480 ? 0.45 : screenWidth < 768 ? 0.65 : screenWidth < 1024 ? 0.8 : 2.2;
   radius = Math.min(250, screenWidth * 0.9) * distanceMultiplier;
 
   emotions.forEach((emotion, index) => {
