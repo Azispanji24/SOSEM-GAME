@@ -15,7 +15,8 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  font-family: 'Comic Sans MS', sans-serif;
+  font-family: 'Comic Sans MS', 'Comic Relief', cursive, sans-serif;
+
   /* background: rgb(249, 249, 249); */
   background-image: url('../../assets/images/bg2.jpg');
     background-repeat: no-repeat;       /* Supaya gambarnya nggak diulang */
