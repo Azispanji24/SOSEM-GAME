@@ -159,13 +159,14 @@ p {
 
   p{
     font-size: 15px; /* Ukuran font paragraf lebih kecil */
+    padding: 15px;
   }
 
   .game-menu a {
     font-size: 24px; /* Ukuran font button lebih kecil */
-    padding: 10px 20px; /* Mengurangi padding di tombol */
+    padding: 10px; /* Mengurangi padding di tombol */
     width: 100%; /* Tombol memenuhi lebar layar */
-    height: 70px; /* Lebar dan tinggi tombol lebih kecil */
+    height: 60px; /* Lebar dan tinggi tombol lebih kecil */
   }
 
   .menu-container {
