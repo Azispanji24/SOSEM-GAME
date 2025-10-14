@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     link.addEventListener('click', function (event) {
       event.preventDefault(); // supaya nggak pindah halaman
       const gameName = this.getAttribute('data-game');
-      alert('ini nanti ya bu guruuu, programmer nya mager plus banyak tugas hahaha ');
+      alert('ini nanti ya bu guruuu, programmer nya mager plus banyak tugas hahaha, coba yang lain ');
     });
   });
 });
