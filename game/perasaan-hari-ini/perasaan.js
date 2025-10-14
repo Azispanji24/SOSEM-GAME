@@ -72,6 +72,43 @@
 //   placeEmotions();
 // });
 
+// Background sound for this page
+let bgSound; // disimpan global biar gak kehapus
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Inisialisasi sound
+  bgSound = new Audio('../../assets/sounds/mixkit-kidding-around-9.mp3'); // path relatif dari perasaan.html
+  bgSound.loop = true; // biar muter terus
+  bgSound.volume = 0.5;
+
+  // Coba mainkan saat halaman dimuat
+  bgSound
+    .play()
+    .then(() => console.log('Background music started on perasaan.html'))
+    .catch((err) => {
+      console.log('Autoplay blocked on load:', err);
+      // Jika blocked, mainkan saat user klik pertama
+      const startMusic = () => {
+        if (bgSound.paused) {
+          bgSound
+            .play()
+            .then(() => console.log('Background music started after click'))
+            .catch((err) => console.log('Autoplay blocked:', err));
+        }
+        document.removeEventListener('click', startMusic);
+      };
+      document.addEventListener('click', startMusic);
+    });
+});
+
+// --- OPTIONAL: hentikan musik saat keluar dari halaman
+window.addEventListener('beforeunload', () => {
+  if (bgSound) {
+    bgSound.pause();
+    bgSound.currentTime = 0;
+  }
+});
+
 const centerEmoji = document.getElementById('center-emoji');
 const result = document.getElementById('result');
 const emotionName = document.getElementById('emotion-name');

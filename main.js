@@ -1,6 +1,15 @@
 function startGame(game) {
-  window.location.href = `game/${perasaan - hari - ini}/${perasaan.split('-')[0]}.html`;
+  // Start background sound when clicking the game link
+  if (bgSound && bgSound.paused) {
+    bgSound
+      .play()
+      .then(() => console.log('Background music started'))
+      .catch((err) => console.log('Autoplay blocked:', err));
+  }
+  // Navigate to the game page
+  window.location.href = `game/${game}/${game.split('-')[0]}.html`;
 }
+
 // script.js
 
 document.addEventListener('DOMContentLoaded', function () {
