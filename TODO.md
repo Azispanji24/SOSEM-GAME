@@ -1,9 +1,9 @@
-# TODO: Fix Zoom Issue on GitHub Pages for Perasaan Game
+# TODO: Fix Sound Issues in Game
 
 ## Tasks
 
-- [x] Update game/perasaan-hari-ini/perasaan.css: Replace large fixed px/rem with flexible vmin/vw units, adjust media queries for proportional scaling, fix .result positioning.
-- [x] Update game/perasaan-hari-ini/perasaan.js: Reduce base radius and multipliers to prevent off-screen positioning on mobile.
-- [ ] Test changes locally by opening perasaan.html in browser.
-- [ ] Push changes to GitHub and verify on GitHub Pages (test on mobile if possible).
-- [ ] If other games have similar issues, check and fix them (e.g., aku-takut, cocokan-gambar, puzzle-emosi).
+- [x] Update bgSound.js to play snoring sound from audio element on index.html, handle autoplay, pause on unload
+- [x] Modify main.js startGame function to skip playing bgSound when clicking perasaan link
+- [x] Fix audio src path in game/perasaan-hari-ini/perasaan.html to use relative path
+- [ ] Test: Launch index.html, verify snoring plays on load and stops on navigation
+- [ ] Test: Click perasaan link, verify kidding sound plays on perasaan.html

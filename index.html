@@ -9,23 +9,30 @@
 </head>
 
 <body>
-    <div class="menu-container">
-        <h1>Game Sosial Emosi</h1>
+    <div class="container">
         <p>Belajar mengenali emosi dengan cara yang menyenangkan!</p>
+        <div class="menu-container">
+            <h1>Game Sosial Emosi</h1>
 
-        <div class="game-menu">
-            <a href="game/puzzle-emosi/puzzle.html" class="game-link" onclick="startGame('puzzle-emosi')"><span>🧩
-                    Puzzle
-                    Emosi</span></a>
-            <a href="game/cocokan-gambar/cocokan.html" class="game-link" onclick="startGame('cocokan-gambar')"><span>🧠
-                    Cocokan
-                    Gambar</span></a>
-            <a href="game/perasaan-hari-ini/perasaan.html" onclick="startGame('perasaan-hari-ini')"><span>😊 Bagaimana
-                    Perasaanmu?</span></a>
-            <a href="game/aku-takut/takut.html" class="game-link" onclick="startGame('aku-takut')"><span>🌙 Aku
-                    Takut</span></a>
+            <div class="game-menu">
+                <a href="game/puzzle-emosi/puzzle.html" class="game-link" onclick="startGame('puzzle-emosi')"><span>🧩
+                    </span></a>
+                <a href="game/cocokan-gambar/cocokan.html" class="game-link"
+                    onclick="startGame('cocokan-gambar')"><span>🧠
+                    </span></a>
+                <a href="game/perasaan-hari-ini/perasaan.html" onclick="startGame('perasaan-hari-ini')"><span>😊
+                    </span></a>
+                <a href="game/aku-takut/takut.html" class="game-link" onclick="startGame('aku-takut')"><span>🌙
+                    </span></a>
+            </div>
         </div>
+        <button id="toggleSoundBtn">🔊</button>
+
     </div>
+
+    <!-- <audio id="bgMusic" src="assets/sounds/male-snoring-297875_oSbUdiph.mp3" preload="auto" loop></audio> -->
+    <audio id="bgMusic" src="assets/sounds/musicBeranda.mp3" preload="auto" loop></audio>
+
 
     <script src="bgSound.js"></script>
     <script src="main.js"></script>

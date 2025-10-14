@@ -1,6 +1,6 @@
 function startGame(game) {
-  // Start background sound when clicking the game link
-  if (bgSound && bgSound.paused) {
+  // Start background sound when clicking the game link, except for perasaan-hari-ini
+  if (game !== 'perasaan-hari-ini' && bgSound && bgSound.paused) {
     bgSound
       .play()
       .then(() => console.log('Background music started'))

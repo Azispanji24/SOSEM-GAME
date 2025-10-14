@@ -1,28 +1,88 @@
-// bg-sound.js
-let bgSound; // disimpan global biar gak kehapus
+// // bg-sound.js for index.html - play snoring sound
+// let bgSound; // disimpan global biar gak kehapus
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   bgSound = document.getElementById('bgMusic'); // Use the audio element from HTML
+//   bgSound.volume = 0.5;
+
+//   // Fungsi untuk mulai play (dijalankan saat user klik pertama)
+//   const startMusic = () => {
+//     if (bgSound.paused) {
+//       bgSound
+//         .play()
+//         .then(() => console.log('Snoring background music started'))
+//         .catch((err) => console.log('Autoplay blocked:', err));
+//     }
+//     document.removeEventListener('click', startMusic);
+//   };
+
+//   // Coba play saat load, jika blocked tunggu klik
+//   bgSound
+//     .play()
+//     .then(() => console.log('Snoring started on load'))
+//     .catch(() => {
+//       console.log('Autoplay blocked, waiting for click');
+//       document.addEventListener('click', startMusic);
+//     });
+// });
+
+// // --- OPTIONAL: hentikan musik saat keluar dari halaman
+// window.addEventListener('beforeunload', () => {
+//   if (bgSound) {
+//     bgSound.pause();
+//     bgSound.currentTime = 0;
+//   }
+// });
+
+let bgSound;
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Inisialisasi sound
-  bgSound = new Audio('assets/sounds/mixkit-kidding-around-9.mp3'); // ganti dengan file kamu
-  bgSound.loop = true; // biar muter terus
+  bgSound = document.getElementById('bgMusic');
+  const toggleBtn = document.getElementById('toggleSoundBtn');
   bgSound.volume = 0.5;
 
-  // Fungsi untuk mulai play (dijalankan saat user klik pertama)
-  const startMusic = () => {
+  // Fungsi untuk memperbarui ikon tombol
+  const updateButtonIcon = () => {
+    if (bgSound.paused) {
+      toggleBtn.textContent = '🔈'; // icon suara mati
+    } else {
+      toggleBtn.textContent = '🔊'; // icon suara nyala
+    }
+  };
+
+  // Coba play otomatis saat load (akan gagal jika belum ada interaksi user)
+  bgSound
+    .play()
+    .then(() => {
+      console.log('Musik diputar otomatis');
+      updateButtonIcon();
+    })
+    .catch(() => {
+      console.log('Autoplay diblokir, tunggu interaksi pengguna');
+      updateButtonIcon();
+    });
+
+  // Event listener tombol
+  toggleBtn.addEventListener('click', () => {
     if (bgSound.paused) {
       bgSound
         .play()
-        .then(() => console.log('Background music started'))
-        .catch((err) => console.log('Autoplay blocked:', err));
+        .then(() => {
+          console.log('Musik dinyalakan lewat tombol');
+          updateButtonIcon();
+        })
+        .catch((err) => {
+          console.log('Gagal memutar musik:', err);
+        });
+    } else {
+      bgSound.pause();
+      console.log('Musik dimatikan lewat tombol');
+      updateButtonIcon();
     }
-    document.removeEventListener('click', startMusic);
-  };
-
-  // Play saat user pertama kali klik halaman
-  document.addEventListener('click', startMusic);
+  });
 });
 
-// --- OPTIONAL: hentikan musik saat keluar dari halaman
+// Stop musik saat keluar dari halaman
 window.addEventListener('beforeunload', () => {
   if (bgSound) {
     bgSound.pause();
