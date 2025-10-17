@@ -148,7 +148,7 @@ body {
 
 
 /* 📱 Responsif untuk HP */
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .container {
     padding: 15px;
     justify-content: center;
