@@ -40,7 +40,7 @@ let bgSound;
 
 document.addEventListener('DOMContentLoaded', () => {
   // Inisialisasi sound
-  bgSound = new Audio('../../assets/sounds/mixkit-kidding-around-9.mp');
+  bgSound = new Audio('../../assets/sounds/mixkit-kidding-around-9.mp3');
   bgSound.loop = true;
   bgSound.volume = 0.5;
 
