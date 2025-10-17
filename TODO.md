@@ -1,9 +1,7 @@
-# TODO: Fix Sound Issues in Game
+# TODO: Fix Zoom Issue on Desktop for index.html and perasaan.html
 
-## Tasks
+## Steps to Complete:
 
-- [x] Update bgSound.js to play snoring sound from audio element on index.html, handle autoplay, pause on unload
-- [x] Modify main.js startGame function to skip playing bgSound when clicking perasaan link
-- [x] Fix audio src path in game/perasaan-hari-ini/perasaan.html to use relative path
-- [ ] Test: Launch index.html, verify snoring plays on load and stops on navigation
-- [ ] Test: Click perasaan link, verify kidding sound plays on perasaan.html
+- [x] Update fixed pixel font sizes in style.css to responsive units (clamp, rem, vw) to prevent zoom on desktop
+- [x] Test the changes on desktop (GitHub, Vercel) to ensure no zoom
+- [x] Verify mobile responsiveness remains intact

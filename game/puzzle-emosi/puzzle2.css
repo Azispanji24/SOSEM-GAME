@@ -1,0 +1,187 @@
+/* 🌿 Styling dasar */ 
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f0f8ff url('/assets/images/bg5.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Comic Relief", system-ui;
+  color: #ffffff;
+}
+
+/* 🧩 Container utama */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.hero {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  /* padding: 10px; */
+  /* flex-wrap: wrap; Tambahan penting agar fleksibel di HP */
+}
+
+/* 🖼️ Gambar contoh puzzle */
+.contoh-puzzle img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  border: #ddc85cc3 6px solid;
+}
+
+.contoh-puzzle img:hover {
+  transform: scale(1.05);
+}
+
+/* 🧭 Area puzzle */
+#puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+  grid-template-rows: repeat(2, 1fr);     /* 2 baris */
+  width: 90vw;     /* responsive terhadap layar */
+  max-width: 600px;
+  aspect-ratio: 3 / 2; /* jaga proporsi 3x2 */
+  gap: 2px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* 🧩 Potongan puzzle */
+.piece {
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/puzzle2.jpeg'); /* Ganti dengan gambar kamu */
+  background-size: 300% 200%; /* 3 kolom, 2 baris → 300% x 200% */
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  cursor: grab;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.piece:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.piece.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+  cursor: grabbing;
+}
+/* 🎉 Tombol Reset */
+.reset-wrapper {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#reset-button {
+  padding: 10px 30px;
+  font-size: 18px;
+  background: linear-gradient(145deg, #58c878, #46a062);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  animation: popIn 0.5s ease;
+}
+
+#reset-button:hover {
+  background: linear-gradient(145deg, #45a066, #3b8f57);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+/* ✨ Animasi saat container muncul */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* 📱 Responsif untuk HP */
+@media (max-width: 500px) {
+  .container {
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  h1{
+    font-size: 60%;
+  }
+
+  .contoh-puzzle  {
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  #puzzle-container {
+    width: 90vw;
+    height: 60vw;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .piece {
+    width: 100%;
+    height: 100%;
+    background-size: 90vw 60vw;
+  }
+}

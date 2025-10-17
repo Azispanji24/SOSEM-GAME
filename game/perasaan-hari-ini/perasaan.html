@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="./perasaan.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/13.0.1/twemoji.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -21,15 +22,14 @@
         </h1>
 
         <div class="circle-container">
-            <div id="center-emoji" class="center-emoji animate__animated animate__zoomIn">
-
-            </div>
-            <!-- Emotions akan dimasukkan lewat JS -->
+            <div id="center-emoji" class="center-emoji animate__animated animate__zoomIn"></div>
         </div>
 
-        <div id="result" class="result hidden">
-            <h2>Kamu merasa <span id="emotion-name"></span>!</h2>
-            <button id="reset-btn">Hapus</button>
+        <div class="cResult hidden">
+            <div id="result" class="result hidden">
+                <h2>Kamu merasa <span id="emotion-name"></span>!</h2>
+                <button id="reset-btn">Hapus</button>
+            </div>
         </div>
     </div>
 

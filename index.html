@@ -5,12 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sosem - Game Edukasi Emosional Anak</title>
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/13.0.1/twemoji.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-
 </head>
 
 <body>
@@ -20,28 +19,20 @@
             <h1>Game Sosial Emosi</h1>
 
             <div class="game-menu">
-                <a href="game/puzzle-emosi/puzzle.html" class="game-link" onclick="startGame('puzzle-emosi')"><span>🧩
-                    </span></a>
-                <a href="game/cocokan-gambar/cocokan.html" class="game-link"
-                    onclick="startGame('cocokan-gambar')"><span>🧠
-                    </span></a>
-                <a href="game/perasaan-hari-ini/perasaan.html" onclick="startGame('perasaan-hari-ini')"><span>😊
-                    </span></a>
-                <a href="game/aku-takut/takut.html" class="game-link" onclick="startGame('aku-takut')"><span>🌙
-                    </span></a>
+                <a href="game/puzzle-emosi/puzzle.html" onclick="startGame('puzzle-emosi')"><span>🧩</span></a>
+                <a href="game/cocokan-gambar/cocokan.html" onclick="startGame('cocokan-gambar')"><span>🧠</span></a>
+                <a href="game/perasaan-hari-ini/perasaan.html"
+                    onclick="startGame('perasaan-hari-ini')"><span>😊</span></a>
+                <a href="game/aku-takut/takut.html" onclick="startGame('aku-takut')"><span>🌙</span></a>
             </div>
         </div>
         <button id="toggleSoundBtn">🔊</button>
-
     </div>
 
-    <!-- <audio id="bgMusic" src="assets/sounds/male-snoring-297875_oSbUdiph.mp3" preload="auto" loop></audio> -->
     <audio id="bgMusic" src="assets/sounds/musicBeranda.mp3" preload="auto" loop></audio>
-
 
     <script src="bgSound.js"></script>
     <script src="main.js"></script>
-
 </body>
 
 </html>
