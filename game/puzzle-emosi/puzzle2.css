@@ -32,12 +32,13 @@ body {
 
 .hero {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 50px;
   /* padding: 10px; */
-  /* flex-wrap: wrap; Tambahan penting agar fleksibel di HP */
+  flex-wrap: wrap;
+   /* Tambahan penting agar fleksibel di HP */
 }
 
 /* 🖼️ Gambar contoh puzzle */
