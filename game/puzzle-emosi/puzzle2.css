@@ -2,7 +2,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: #f0f8ff url('/assets/images/bg5.jpeg') no-repeat center center fixed;
+  background: #f0f8ff url('assets/images/bg5.jpeg') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -145,6 +145,11 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+}
 
 
 /* 📱 Responsif untuk HP */
