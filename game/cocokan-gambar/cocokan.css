@@ -155,11 +155,13 @@ h1 {
 h1{
   font-size: 15px;
   text-align: center;
+  margin-top: 125px;
 }
 
 
   .game-container {
-    transform: scale(0.5); /* sesuaikan ukuran (0.6–0.8 tergantung tampilan) */
+    /* top: 70px; */
+    transform: scale(0.65); /* sesuaikan ukuran (0.6–0.8 tergantung tampilan) */
     transform-origin: top center; /* biar tetap di tengah dan tidak geser */
     /* margin-top: -20px; */
     flex-wrap: nowrap;
@@ -173,7 +175,7 @@ h1{
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: -270px;
+    margin-top: -180px;
     justify-content: center;
     align-items: center;
     text-align: center;
