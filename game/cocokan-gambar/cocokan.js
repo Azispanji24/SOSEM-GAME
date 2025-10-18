@@ -25,6 +25,7 @@ function resetGame() {
 
   lines.forEach((line) => line.remove());
   lines = [];
+  document.getElementById('popup').classList.add('hidden');
 
   document.querySelectorAll('.item').forEach((el) => {
     el.classList.remove('matched');
@@ -40,6 +41,14 @@ function addClickedBorder(element) {
     el.classList.remove('clicked');
   });
   element.classList.add('clicked');
+}
+
+function showPopup() {
+  document.getElementById('popup').classList.remove('hidden');
+}
+
+function closePopup() {
+  document.getElementById('popup').classList.add('hidden');
 }
 
 sources.forEach((source) => {
@@ -95,7 +104,7 @@ targets.forEach((target) => {
       // 🔊 Play 2 error sounds
       playBothSounds(document.getElementById('errorSound'), document.getElementById('errorSound2'));
       addClickedBorder(target);
-      alert('Ups! Itu bukan emosi yang cocok. Coba lagi.');
+      showPopup();
     }
 
     selectedSource = null;
