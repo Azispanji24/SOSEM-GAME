@@ -159,6 +159,8 @@ body {
     padding: 15px;
     justify-content: center;
     align-items: center;
+    width: 80%;
+
   }
 
   .hero {
@@ -166,7 +168,7 @@ body {
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-    width: 80%;
+    width: 100%;
   }
 
   h1{
