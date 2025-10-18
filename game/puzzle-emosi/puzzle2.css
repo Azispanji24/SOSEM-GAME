@@ -165,7 +165,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    fex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   h1{
