@@ -166,6 +166,7 @@ body {
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    width: 100%;
   }
 
   h1{
