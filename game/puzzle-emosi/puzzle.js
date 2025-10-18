@@ -37,6 +37,44 @@ function renderPuzzle() {
   });
 }
 
+let bgSound;
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Inisialisasi sound
+  bgSound = new Audio('../../assets/sounds/mixkit-kidding-around-9.mp3');
+  bgSound.loop = true;
+  bgSound.volume = 0.5;
+
+  // Coba mainkan saat halaman dimuat
+  bgSound
+    .play()
+    .then(() => console.log('Background music started on perasaan.html'))
+    .catch((err) => {
+      console.log('Autoplay blocked on load:', err);
+      const startMusic = () => {
+        if (bgSound.paused) {
+          bgSound
+            .play()
+            .then(() => console.log('Background music started after click'))
+            .catch((err) => console.log('Autoplay blocked:', err));
+        }
+        document.removeEventListener('click', startMusic);
+      };
+      document.addEventListener('click', startMusic);
+    });
+
+  // Render emosi setelah DOM siap
+  placeEmotions();
+});
+
+// Hentikan musik saat keluar dari halaman
+window.addEventListener('beforeunload', () => {
+  if (bgSound) {
+    bgSound.pause();
+    bgSound.currentTime = 0;
+  }
+});
+
 let draggedIndex = null;
 
 function dragStart(e) {
