@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocokkan Emosi Anak</title>
+    <link rel="stylesheet" href="./cocokan.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1>Cocokkan Ekspresi Anak dengan Emosinya</h1>
+
+    <div class="game-container">
+        <!-- SOURCES -->
+        <div class="column" id="sources">
+            <div class="item-container">
+                <img src="/assets/images/Ctertawa.png" class="item source" data-emotion="happy" id="source-happy">
+                <div class="dot source-dot" id="dot-source-happy"></div>
+            </div>
+            <div class="item-container">
+                <img src="/assets/images/Csedih.png" class="item source" data-emotion="sad" id="source-sad">
+                <div class="dot source-dot" id="dot-source-sad"></div>
+            </div>
+            <div class="item-container">
+                <img src="/assets/images/Cmarah.png" class="item source" data-emotion="angry" id="source-angry">
+                <div class="dot source-dot" id="dot-source-angry"></div>
+            </div>
+            <div class="item-container">
+                <img src="/assets/images/Csenyum.png" class="item source" data-emotion="scared" id="source-scared">
+                <div class="dot source-dot" id="dot-source-scared"></div>
+            </div>
+        </div>
+
+        <!-- TARGETS (acak urutannya sesuai request kamu) -->
+        <div class="column" id="targets">
+            <div class="item-container">
+                <div class="dot target-dot" id="dot-target-sad"></div>
+                <img src="/assets/images/crying-face.png" class="item target" data-emotion="sad" id="target-sad">
+            </div>
+            <div class="item-container">
+                <div class="dot target-dot" id="dot-target-scared"></div>
+                <img src="/assets/images/smiling-face.png" class="item target" data-emotion="scared" id="target-scared">
+            </div>
+            <div class="item-container">
+                <div class="dot target-dot" id="dot-target-angry"></div>
+                <img src="/assets/images/angry-face.png" class="item target" data-emotion="angry" id="target-angry">
+            </div>
+            <div class="item-container">
+                <div class="dot target-dot" id="dot-target-happy"></div>
+                <img src="/assets/images/grinning-squinting.png" class="item target" data-emotion="happy"
+                    id="target-happy">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="hasil">
+        <div id="result"></div>
+        <button id="resetBtn">Reset Game</button>
+    </div>
+    <!-- Audio benar-->
+    <audio id="successSound" src="/assets/sounds/mixkit-game-level-completed-2059.wav" preload="auto"></audio>
+    <audio id="successSound2" src="/assets/sounds/kaget.mp3" preload="auto"></audio>
+
+    <!-- Audio salah-->
+    <audio id="errorSound" src="/assets/sounds/mixkit-cartoon-failure-piano-473.wav" preload="auto"></audio>
+    <audio id="errorSound2" src="/assets/sounds/sedih.mp3" preload="auto"></audio>
+
+
+    <!-- complete sound audio -->
+    <audio id="completeSound1" src="/assets/sounds/mixkit-cartoon-failure-piano-473.wav" preload="auto"></audio>
+    <audio id="completeSound2" src="/assets/sounds/celebration2.mp3" preload="auto"></audio>
+
+    <!-- LeaderLine -->
+    <script src="https://cdn.jsdelivr.net/npm/leader-line@1.0.7/leader-line.min.js"></script>
+
+    <script src="cocokan.js">
+
+
+    </script>
+
+</body>
+
+</html>
