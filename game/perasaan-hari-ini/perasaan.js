@@ -62,6 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
       document.addEventListener('click', startMusic);
     });
 
+  // ======== AUDIO MASUK KE GAME (ONCE) ========
+  enterSound = new Audio('../../assets/sounds/perasaan.mp3');
+
+  enterSound.loop = false;
+  enterSound.volume = 1.0;
+
+  // Coba play saat masuk ke game
+  enterSound.play().catch(() => {
+    // Jika autoplay diblokir → play setelah user klik pertama
+    const startEnterSound = () => {
+      enterSound.play().catch((err) => console.log('Autoplay enter sound blocked:', err));
+      document.removeEventListener('click', startEnterSound);
+    };
+    document.addEventListener('click', startEnterSound);
+  });
+
   // Render emosi setelah DOM siap
   placeEmotions();
 });

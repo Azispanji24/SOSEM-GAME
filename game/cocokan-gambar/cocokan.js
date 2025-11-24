@@ -113,3 +113,81 @@ targets.forEach((target) => {
 });
 
 resetBtn.addEventListener('click', resetGame);
+
+let bgSound;
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Inisialisasi sound
+  bgSound = new Audio('../../assets/sounds/kids2.mp3');
+  bgSound.loop = true;
+  bgSound.volume = 0.5;
+
+  // Coba mainkan saat halaman dimuat
+  bgSound
+    .play()
+    .then(() => console.log('Background music started on perasaan.html'))
+    .catch((err) => {
+      console.log('Autoplay blocked on load:', err);
+      const startMusic = () => {
+        if (bgSound.paused) {
+          bgSound
+            .play()
+            .then(() => console.log('Background music started after click'))
+            .catch((err) => console.log('Autoplay blocked:', err));
+        }
+        document.removeEventListener('click', startMusic);
+      };
+      document.addEventListener('click', startMusic);
+    });
+
+  // ======== AUDIO MASUK KE GAME (ONCE) ========
+  enterSound = new Audio('../../assets/sounds/bgcocokan2.mp3');
+
+  enterSound.loop = false;
+  enterSound.volume = 1.0;
+
+  // Coba play saat masuk ke game
+  enterSound.play().catch(() => {
+    // Jika autoplay diblokir → play setelah user klik pertama
+    const startEnterSound = () => {
+      enterSound.play().catch((err) => console.log('Autoplay enter sound blocked:', err));
+      document.removeEventListener('click', startEnterSound);
+    };
+    document.addEventListener('click', startEnterSound);
+  });
+
+  // Render emosi setelah DOM siap
+  placeEmotions();
+});
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Inisialisasi audio
+//   const enterSound1 = new Audio('../../assets/sounds/bgcocokan.mp3');
+//   const enterSound2 = new Audio('../../assets/sounds/enterSound2.mp3');
+
+//   enterSound1.loop = false;
+//   enterSound2.loop = false;
+
+//   function playEnterSounds() {
+//     enterSound1.currentTime = 0;
+//     enterSound1.play().catch(() => {
+//       const startEnterSounds = () => {
+//         enterSound1.play().catch(() => {});
+//         document.removeEventListener('click', startEnterSounds);
+//       };
+//       document.addEventListener('click', startEnterSounds);
+//     });
+
+//     // Audio kedua diputar setelah audio pertama selesai
+//     enterSound1.addEventListener('ended', () => {
+//       enterSound2.currentTime = 0;
+//       enterSound2.play().catch(() => {});
+//     });
+//   }
+
+//   // Panggil langsung tanpa nested DOMContentLoaded
+//   playEnterSounds();
+
+//   // Render emosi setelah DOM siap
+//   placeEmotions();
+// });

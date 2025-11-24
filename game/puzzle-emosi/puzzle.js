@@ -41,7 +41,7 @@ let bgSound;
 
 document.addEventListener('DOMContentLoaded', () => {
   // Inisialisasi sound
-  bgSound = new Audio('../../assets/sounds/mixkit-kidding-around-9.mp3');
+  bgSound = new Audio('../../assets/sounds/kids3.mp3');
   bgSound.loop = true;
   bgSound.volume = 0.5;
 
@@ -62,6 +62,21 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       document.addEventListener('click', startMusic);
     });
+
+  // ======== AUDIO MASUK KE GAME (ONCE) ========
+  enterSound = new Audio('../../assets/sounds/bgpuzzle.mp3');
+  enterSound.loop = false;
+  enterSound.volume = 1.0;
+
+  // Coba play saat masuk ke game
+  enterSound.play().catch(() => {
+    // Jika autoplay diblokir → play setelah user klik pertama
+    const startEnterSound = () => {
+      enterSound.play().catch((err) => console.log('Autoplay enter sound blocked:', err));
+      document.removeEventListener('click', startEnterSound);
+    };
+    document.addEventListener('click', startEnterSound);
+  });
 
   // Render emosi setelah DOM siap
   placeEmotions();
@@ -110,13 +125,37 @@ function shuffle(array) {
   return array;
 }
 
+// function checkWin() {
+//   const isWin = positions.every((pos, idx) => pos === idx);
+//   if (isWin) {
+//     statusText.textContent = '🎉 Puzzle Selesai!';
+//     resetButton.style.display = 'inline-block';
+
+//     // Tambahkan ulang animasi (reset)
+//     resetButton.classList.remove('pop');
+//     void resetButton.offsetWidth; // reflow hack
+//     resetButton.classList.add('pop');
+//   } else {
+//     statusText.textContent = '';
+//     resetButton.style.display = 'none';
+//   }
+// }
+
+// Buat variabel global untuk audio kemenangan
+let winSound = new Audio('../../assets/sounds/puzzleselesai.mp3');
+winSound.volume = 1.0; // atur volume sesuai kebutuhan
+winSound.loop = false; // jangan looping, cukup sekali
+
 function checkWin() {
   const isWin = positions.every((pos, idx) => pos === idx);
   if (isWin) {
     statusText.textContent = '🎉 Puzzle Selesai!';
     resetButton.style.display = 'inline-block';
 
-    // Tambahkan ulang animasi (reset)
+    // Mainkan suara kemenangan
+    winSound.play().catch((err) => console.log('Autoplay win sound blocked:', err));
+
+    // Tambahkan ulang animasi tombol reset
     resetButton.classList.remove('pop');
     void resetButton.offsetWidth; // reflow hack
     resetButton.classList.add('pop');
